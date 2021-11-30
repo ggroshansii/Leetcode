@@ -15,3 +15,16 @@ Do not allocate extra space for another array. You must do this by modifying the
 BACKGROUND:
 In computer science, an in-place algorithm is an algorithm which transforms input using no auxiliary data structure. However, a small amount of extra storage space is allowed for auxiliary variables. The input is usually overwritten by the output as the algorithm executes. An in-place algorithm updates its input sequence only through replacement or swapping of elements. An algorithm which is not in-place is sometimes called not-in-place or out-of-place.
 */
+
+
+//SOLUTION 1:
+
+var removeDuplicates = function(nums) {
+    for (let i=0; i < nums.length; i++) {
+        if (nums[i] === nums[i-1]) {
+            nums.splice(i, 1);
+            i = 0;
+            continue;
+        }
+    }
+};
